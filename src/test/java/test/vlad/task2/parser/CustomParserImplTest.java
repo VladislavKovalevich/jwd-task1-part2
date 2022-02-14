@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class CustomParserImplTest {
     private CustomParser stringParser;
@@ -21,12 +22,17 @@ public class CustomParserImplTest {
 
     @DataProvider(name = "parseString")
     public static Object[][] dataCreate(){
-        return new Object[][]{{Collections.singletonList("-1, 02, 5, 2 , -6, - 6"), Arrays.asList(-1, 5, 2, -6)} };
+        return new Object[][]{
+                {
+                    Collections.singletonList("-1, 02, 5, 2 , -6, - 6"),
+                    Collections.singletonMap(0, Arrays.asList(-1, 5, 2, -6))
+                }
+        };
     }
 
     @Test(dataProvider = "parseString")
-    public void testReadArrayFromFile(List<String> testString, List<Integer> expected) {
-        List<Integer> actual = stringParser.parseArraysList(testString);
+    public void testReadArrayFromFile(List<String> testString, Map<Integer, List<Integer>> expected) {
+        Map<Integer, List<Integer>> actual = stringParser.parseStringsList(testString);
         Assert.assertEquals(actual, expected);
     }
 }

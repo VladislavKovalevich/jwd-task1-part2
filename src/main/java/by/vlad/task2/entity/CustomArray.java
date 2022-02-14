@@ -34,6 +34,7 @@ public class CustomArray implements Observable {
 
     public void setArray(int[] array) {
         this.array = array;
+        notifyObservers();
     }
 
     @Override

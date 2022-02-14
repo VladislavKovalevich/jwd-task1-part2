@@ -1,7 +1,8 @@
 package by.vlad.task2.parser;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CustomParser {
-    List<Integer> parseArraysList(List<String> arraysString);
+    Map<Integer, List<Integer>> parseStringsList(List<String> arraysString);
 }
