@@ -12,6 +12,6 @@ public class IdSpecification implements Specification {
 
     @Override
     public boolean specify(CustomArray item) {
-        return item.getId().equals(id);
+        return item.getId() == id;
     }
 }

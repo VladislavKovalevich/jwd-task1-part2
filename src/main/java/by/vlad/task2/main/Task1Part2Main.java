@@ -3,12 +3,11 @@ package by.vlad.task2.main;
 import by.vlad.task2.creator.Creator;
 import by.vlad.task2.creator.impl.CreatorImpl;
 import by.vlad.task2.entity.CustomArray;
-import by.vlad.task2.entity.CustomArrayParameter;
+import by.vlad.task2.entity.CustomArrayStatistic;
 import by.vlad.task2.entity.Warehouse;
 import by.vlad.task2.entity.comparator.ArrayFirstItemComparator;
-import by.vlad.task2.entity.comparator.ArrayLengthComparator;
 import by.vlad.task2.exception.ReaderException;
-import by.vlad.task2.observer.impl.CustomArrayObserver;
+import by.vlad.task2.observer.impl.CustomArrayObserverImpl;
 import by.vlad.task2.parser.CustomParser;
 import by.vlad.task2.parser.impl.CustomParserImpl;
 import by.vlad.task2.reader.TextFileReader;
@@ -19,7 +18,6 @@ import by.vlad.task2.repository.impl.ArrayLengthSpecification;
 import by.vlad.task2.service.CustomArrayMath;
 import by.vlad.task2.service.impl.CustomArrayMathImpl;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -43,8 +41,8 @@ public class Task1Part2Main {
 
         Creator creator = new CreatorImpl();
         CustomArrayMath customArrayMath = new CustomArrayMathImpl();
-        CustomArrayObserver customArrayObserver = new CustomArrayObserver();
-        CustomArrayParameter parameter;
+        CustomArrayObserverImpl customArrayObserver = new CustomArrayObserverImpl();
+        CustomArrayStatistic parameter;
         CustomArray customArray;
 
         for (List<Integer> integerList : map.values()) {
@@ -53,7 +51,7 @@ public class Task1Part2Main {
 
             customArray.attach(customArrayObserver);
 
-            parameter = new CustomArrayParameter(customArrayMath.minNumber(customArray),
+            parameter = new CustomArrayStatistic(customArrayMath.minNumber(customArray),
                     customArrayMath.maxNumber(customArray),
                     customArrayMath.sumStream(customArray));
 

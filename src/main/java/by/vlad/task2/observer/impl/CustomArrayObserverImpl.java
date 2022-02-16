@@ -1,15 +1,15 @@
 package by.vlad.task2.observer.impl;
 
 import by.vlad.task2.entity.CustomArray;
-import by.vlad.task2.entity.CustomArrayParameter;
+import by.vlad.task2.entity.CustomArrayStatistic;
 import by.vlad.task2.entity.Warehouse;
 import by.vlad.task2.observer.CustomArrayEvent;
-import by.vlad.task2.observer.Observer;
+import by.vlad.task2.observer.CustomArrayObserver;
 import by.vlad.task2.service.impl.CustomArrayMathImpl;
 
 import java.util.OptionalInt;
 
-public class CustomArrayObserver implements Observer {
+public class CustomArrayObserverImpl implements CustomArrayObserver {
     @Override
     public void parameterChanged(CustomArrayEvent event) {
         CustomArray customArray = event.getSource();
@@ -19,10 +19,10 @@ public class CustomArrayObserver implements Observer {
         OptionalInt max = customArrayMath.maxNumber(customArray);
         OptionalInt sum = customArrayMath.sum(customArray);
 
-        CustomArrayParameter customArrayParameter = new CustomArrayParameter(min, max, sum);
+        CustomArrayStatistic customArrayStatistic = new CustomArrayStatistic(min, max, sum);
 
         Integer arrayId = customArray.getId();
         Warehouse warehouse = Warehouse.getInstance();
-        warehouse.replace(arrayId, customArrayParameter);
+        warehouse.replace(arrayId, customArrayStatistic);
     }
 }

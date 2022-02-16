@@ -1,5 +1,5 @@
 package by.vlad.task2.observer;
 
-public interface Observer {
+public interface CustomArrayObserver {
     void parameterChanged(CustomArrayEvent event);
 }

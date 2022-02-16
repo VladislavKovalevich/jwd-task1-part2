@@ -3,12 +3,12 @@ package by.vlad.task2.entity;
 import java.util.Objects;
 import java.util.OptionalInt;
 
-public class CustomArrayParameter {
+public class CustomArrayStatistic {
     private OptionalInt min;
     private OptionalInt max;
     private OptionalInt sum;
 
-    public CustomArrayParameter(OptionalInt min, OptionalInt max, OptionalInt sum) {
+    public CustomArrayStatistic(OptionalInt min, OptionalInt max, OptionalInt sum) {
         this.min = min;
         this.max = max;
         this.sum = sum;
@@ -18,7 +18,7 @@ public class CustomArrayParameter {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomArrayParameter that = (CustomArrayParameter) o;
+        CustomArrayStatistic that = (CustomArrayStatistic) o;
         return Objects.equals(min, that.min) &&
                 Objects.equals(max, that.max) &&
                 Objects.equals(sum, that.sum);
@@ -31,7 +31,7 @@ public class CustomArrayParameter {
 
     @Override
     public String toString() {
-        return "CustomArrayParameter{" +
+        return "CustomArrayStatistic{" +
                 "min=" + min +
                 ", max=" + max +
                 ", sum=" + sum +

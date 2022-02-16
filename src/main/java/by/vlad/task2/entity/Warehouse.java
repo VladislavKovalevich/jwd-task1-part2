@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Warehouse {
     private static Warehouse instance;
-    private Map<Integer, CustomArrayParameter> paramMap = new HashMap<>();
+    private Map<Integer, CustomArrayStatistic> paramMap = new HashMap<>();
 
     private Warehouse(){
     }
@@ -18,19 +18,19 @@ public class Warehouse {
         return instance;
     }
 
-    public CustomArrayParameter put(Integer key, CustomArrayParameter value){
+    public CustomArrayStatistic put(Integer key, CustomArrayStatistic value){
         return paramMap.put(key, value);
     }
 
-    public CustomArrayParameter get(Integer key){
+    public CustomArrayStatistic get(Integer key){
         return paramMap.get(key);
     }
 
-    public CustomArrayParameter replace(Integer key, CustomArrayParameter value){
+    public CustomArrayStatistic replace(Integer key, CustomArrayStatistic value){
         return paramMap.replace(key, value);
     }
 
-    public CustomArrayParameter remove(Integer key){
+    public CustomArrayStatistic remove(Integer key){
         return paramMap.remove(key);
     }
 }
