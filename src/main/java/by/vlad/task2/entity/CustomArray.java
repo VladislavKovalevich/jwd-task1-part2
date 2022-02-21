@@ -42,7 +42,7 @@ public class CustomArray extends AbstractArray {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("CustomArray{" + "array=").append(Arrays.toString(array)).append('}');
+        stringBuilder.append("CustomArray{ array=").append(Arrays.toString(array)).append('}');
 
         return stringBuilder.toString();
     }

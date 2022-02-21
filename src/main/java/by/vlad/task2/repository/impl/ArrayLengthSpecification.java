@@ -20,6 +20,6 @@ public class ArrayLengthSpecification implements Specification {
     @Override
     public boolean specify(CustomArray item) {
         int[] array = item.getArray();
-        return (array.length >= minLength && array.length < maxLength);
+        return (array.length < maxLength);
     }
 }

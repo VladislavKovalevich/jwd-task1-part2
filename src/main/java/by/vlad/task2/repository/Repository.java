@@ -26,8 +26,8 @@ public class Repository {
         repository.add(customArray);
     }
 
-    public void remove(CustomArray customArray){
-        repository.remove(customArray);
+    public boolean remove(CustomArray customArray){
+        return repository.remove(customArray);
     }
 
     public CustomArray get(int index){

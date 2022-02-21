@@ -31,7 +31,7 @@ public class CustomParserImplTest {
     }
 
     @Test(dataProvider = "parseString")
-    public void testReadArrayFromFile(List<String> testString, Map<Integer, List<Integer>> expected) {
+    public void parseStringToArray(List<String> testString, Map<Integer, List<Integer>> expected) {
         Map<Integer, List<Integer>> actual = stringParser.parseStringsList(testString);
         Assert.assertEquals(actual, expected);
     }
