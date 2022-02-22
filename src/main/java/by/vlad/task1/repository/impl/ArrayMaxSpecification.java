@@ -22,7 +22,7 @@ public class ArrayMaxSpecification implements Specification {
         if (!max.isPresent()){
             return false;
         }else{
-            return max.getAsInt() < this.max;
+            return max.getAsInt() == this.max;
         }
     }
 }

@@ -22,7 +22,7 @@ public class ArrayMinSpecification implements Specification {
         if (!min.isPresent()){
             return false;
         }else{
-            return min.getAsInt() > this.min;
+            return min.getAsInt() == this.min;
         }
     }
 }

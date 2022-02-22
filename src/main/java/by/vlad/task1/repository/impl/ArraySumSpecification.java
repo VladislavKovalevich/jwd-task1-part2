@@ -22,7 +22,7 @@ public class ArraySumSpecification implements Specification {
         if (!sum.isPresent()){
             return false;
         }else{
-            return sum.getAsInt() < this.sum;
+            return sum.getAsInt() >= this.sum;
         }
     }
 }
